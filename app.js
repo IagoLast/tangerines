@@ -8,7 +8,7 @@ function start() {
     let firstTime = true;
     $main.innerHTML = '';
     const hours = Math.round(Math.random() * 24);
-    const minutes = Math.round((Math.random() * 60) / 5) * 5;
+    const minutes = Math.round((Math.random() * 55) / 5) * 5;
 
     $footer.innerHTML = `<h2> You have to eat ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')} </h2>`;
     const slices = generateBoard();
