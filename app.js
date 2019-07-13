@@ -1,7 +1,7 @@
 import { generateBoard } from "./board.service.js";
 
 const $main = document.querySelector('main');
-const $footer = document.querySelector('footer');
+const $header = document.querySelector('header');
 
 
 function start() {
@@ -10,7 +10,7 @@ function start() {
     const hours = Math.round(Math.random() * 24);
     const minutes = Math.round((Math.random() * 55) / 5) * 5;
 
-    $footer.innerHTML = `<h2> You have to eat ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')} </h2>`;
+    $header.innerHTML = `<h2> You have to eat ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')} </h2>`;
     const slices = generateBoard();
     slices.forEach(slice => {
         $main.appendChild(slice);
@@ -34,7 +34,7 @@ function start() {
         else {
             if (clickedMinutes == minutes) {
                 target.style.opacity = 0.3;
-                $footer.innerHTML = '<h2> Good job! </h2>';
+                $header.innerHTML = '<h2> Good job! </h2>';
                 setTimeout(start, 1000);
             } else {
                 _setError(target);
